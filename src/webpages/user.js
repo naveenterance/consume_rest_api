@@ -1,4 +1,7 @@
-import React, { useState, useEffect }  from 'react';const User = props => {    var id = props.match.params.id;    const [error, setError] = useState(null);
+import React, { useState, useEffect }  from 'react';
+const User = props => {    
+    var id = props.match.params.id;    
+    const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [user, setUser] = useState([]);
     const [userAddress, setUserAddress] = useState([]);
@@ -50,6 +53,6 @@ import React, { useState, useEffect }  from 'react';const User = props => {    v
                 
 
 
-                        </div>        );
+                </div>        );
     }
 };export default User;

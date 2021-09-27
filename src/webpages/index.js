@@ -4,8 +4,11 @@ import {
   Switch,
   Route,
   Link
-} from "react-router-dom";import Home from './home';
-import User from './user';const Webpages = () => {
+} 
+from "react-router-dom";
+import Home from './home';
+import User from './user';
+const Webpages = () => {
     return(
         <Router>
             <Route exact path="/" component= {Home} />
