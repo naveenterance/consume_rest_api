@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import React, { useState, useEffect }  from 'react';
-const Home = () => {const [error, setError] = useState(null);
-const [isLoaded, setIsLoaded] = useState(false);
-const [users, setUsers] = useState([]);    
+import React, { useState, useEffect } from "react";
+const Home = () => {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [users, setUsers] = useState([]);
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/users/")
-            .then(res => res.json())
+            .then((res) => res.json())
             .then(
                 (data) => {
                     setIsLoaded(true);
@@ -16,8 +17,8 @@ const [users, setUsers] = useState([]);
                     setIsLoaded(true);
                     setError(error);
                 }
-            )
-      }, []);
+            );
+    }, []);
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -25,13 +26,13 @@ const [users, setUsers] = useState([]);
     } else {
         return (
             <ul>
-                {users.map(user => (
-                <li >
-                       <Link to={`user/${user.id}`}>{user.name}</Link>
-                </li>
+                {users.map((user) => (
+                    <li>
+                        <Link to={`user/${user.id}`}>{user.name}</Link>
+                    </li>
                 ))}
             </ul>
-            
         );
-    };
-};export default Home;
+    }
+};
+export default Home;
